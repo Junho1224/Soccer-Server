@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @ToString
-@Entity(name = "stadiums")
+@Entity(name = "stadium")
 public class Stadium {
 
     @Id
