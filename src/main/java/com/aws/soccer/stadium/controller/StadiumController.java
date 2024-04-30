@@ -24,6 +24,22 @@ public class StadiumController {
     public List<String> teamField(){
         return service.teamField();
     }
+    @GetMapping("/manyinfo")
+    public List<String> manyInfo(){
+        return service.manyInfo();
+    }
+//    @GetMapping("/bigwin")
+//    public List<String> bigWin(){
+//        return service.bigWin();
+//    }
+    @GetMapping("/withnohomeground")
+    public List<String> withNoHomeGround(){
+        return service.withNoHomeGround();
+    }
+    @GetMapping("/maystadium")
+    public List<String> mayStadium(){
+        return service.mayStadium();
+    }
 
 
 
