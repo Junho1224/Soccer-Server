@@ -1,16 +1,14 @@
 package com.aws.soccer.team.model;
 
-import com.aws.soccer.player.model.Player;
-import com.aws.soccer.stadium.model.Stadium;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.extern.log4j.Log4j2;
 
-import java.util.List;
-
+@Log4j2
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
+@ToString(exclude = {"id"})
 @Entity(name = "team")
 @Builder
 public class Team {
@@ -32,12 +30,4 @@ public class Team {
     private String fax;
     private String homepage;
     private String OWNER;
-
-//    @OneToMany(mappedBy = "team_id",cascade = CascadeType.REMOVE)
-//    private List<Player> players;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "stadium_id")
-//    private Stadium stadium;
-
 }
