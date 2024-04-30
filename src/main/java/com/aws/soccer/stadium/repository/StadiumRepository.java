@@ -38,17 +38,17 @@ public interface StadiumRepository extends JpaRepository<Stadium, Long> {
 
     //16
 
-    @Query("SELECT DISTINCT s.stadiumName AS 경기장이름, sc.scheDate AS 경기일정 " +
-            "FROM stadium s " +
-            "JOIN team t " +
-            "JOIN player p " +
-            "JOIN schedule sc " +
-            "WHERE sc.home_score - sc.away_score > 2")
-    List<String> bigWin();
+//    @Query("SELECT DISTINCT s.stadiumName as 경기장이름, sc.scheDate as 경기일정, (select t.team FROM team t WHERE t.teamId = sc.hometeamId)as 홈팀, (select t.team FROM team t WHERE t.teamId = sc.awayteamId)as 어웨이팀" +
+//            " FROM stadium s" +
+//            " JOIN team t ON s.stadiumId" +
+//            " JOIN player p ON t.teamId = p.teamId" +
+//            " JOIN schedule sc ON s.stadiumId = sc.stadiumId" +
+//            " WHERE sc.home_score - sc.away_score > 2")
+//    List<String> bigWin();
 
     //17
 
-    @Query(" SELECT s.stadiumName, t.team FROM stadium s LEFT JOIN team t")
+    @Query("SELECT s.stadiumName as 경기장이름 , (SELECT t.team FROM team t WHERE t.teamId = s.hometeamId) as 홈팀 FROM stadium s ")
     List<String> withNoHomeGround();
 
     //23

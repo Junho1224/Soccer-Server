@@ -6,7 +6,7 @@ public interface StadiumService {
 
     List<String> teamField();
     List<String> manyInfo();
-    List<String> bigWin();
+//    List<String> bigWin();
     List<String> withNoHomeGround();
     List<String> mayStadium();
 }
