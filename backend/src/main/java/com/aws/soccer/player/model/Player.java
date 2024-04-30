@@ -16,12 +16,13 @@ public class Player {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String playerId;
+    private String teamId;
     private String name;
     private String playerName;
     private String ePlayerName;
     private String nickname;
     private String joinYyyy ;
-    private String position ;
+    private String POSITION ;
     private String backNo ;
     private String nation ;
     private String birthDate ;
@@ -29,7 +30,7 @@ public class Player {
     private String height ;
     private String weight ;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "team_id", nullable = true, referencedColumnName = "teamId", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
-    private Team teamId;
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "team_id", nullable = true, referencedColumnName = "teamId", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+    // private Team teamId;
 }

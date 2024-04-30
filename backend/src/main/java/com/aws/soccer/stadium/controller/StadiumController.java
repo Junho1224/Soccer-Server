@@ -36,10 +36,10 @@ public class StadiumController {
     public List<String> withNoHomeGround(){
         return service.withNoHomeGround();
     }
-    @GetMapping("/maystadium")
-    public List<String> mayStadium(){
-        return service.mayStadium();
-    }
+    // @GetMapping("/maystadium")
+    // public List<String> mayStadium(){
+    //     return service.mayStadium();
+    // }
 
 
 

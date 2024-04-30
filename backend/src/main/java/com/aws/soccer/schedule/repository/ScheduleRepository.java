@@ -11,9 +11,11 @@ import com.aws.soccer.schedule.model.Schedule;
 @Repository
 public interface ScheduleRepository extends JpaRepository<Schedule, Long> {
 
+    @Query("SELECT (SELECT s.stadiumName FROM stadium s WHERE sc.stadiumId = s.stadiumId) as 경기장 ,sc.scheDate as 경기날짜 FROM schedule sc WHERE sc.scheDate BETWEEN :startDate AND :endDate")
+    List<String> findStadiumNamesByDateRange(String startDate, String endDate);
 
-    // @Query("SELECT s.stadium.stadiumName FROM Schedule s WHERE s.scheDate BETWEEN :startDate AND :endDate")
-    // List<String> findStadiumNamesByDateRange(String startDate, String endDate);
+    @Query("SELECT (SELECT s.stadiumName FROM stadium s WHERE sc.stadiumId = s.stadiumId) as 경기장 ,sc.scheDate as 경기날짜 FROM schedule sc WHERE sc.scheDate LIKE '201205%'")
+    List<String> mayStadium();
 
 
 

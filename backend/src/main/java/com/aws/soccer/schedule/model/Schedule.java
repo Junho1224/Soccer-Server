@@ -11,21 +11,22 @@ import lombok.*;
 @Getter
 @ToString(exclude = "id")
 @Setter
-@Entity
+@Entity(name = "schedule")
 public class Schedule {
 
     @Id
     @Column(name = "id",nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String stadiumId;
     private String scheDate;
     private String gubun;
     private String hometeamId;
-    private String awayteamId;
-    private Integer homeScore;
-    private Integer awayScore;
+    private String awayteamId;  
+    private Long home_score;
+    private Long away_score;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "stadium_id", nullable = true, referencedColumnName = "stadiumId", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
-    private Stadium stadiumId;
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "stadium_id", nullable = true, referencedColumnName = "stadiumId", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+    // private Stadium stadiumId;
 }

@@ -10,13 +10,12 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class ScheduleServiceImpl implements ScheduleService{
+public class ScheduleServiceImpl implements ScheduleService {
 
     private final ScheduleRepository repository;
 
-    // @Override
-    // public List<String> findStadiumNamesByDateRange(String startDate, String endDate) {
-    // return repository.findStadiumNamesByDateRange("20120501", "20120531");
-       
-    
+    @Override
+    public List<String> mayStadium() {
+        return repository.mayStadium();
+    } // 23
 }

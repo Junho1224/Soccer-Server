@@ -15,23 +15,18 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 
-@CrossOrigin(origins = "*",allowedHeaders = "*")
-@RestController
-@RequestMapping(path = "/api/schedule")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequiredArgsConstructor
-@Slf4j
+@RequestMapping(path = "/api/schedule")
+@RestController
 public class ScheduleController {
 
     private ScheduleService scheduleService;
 
-    // @GetMapping("/")
-    //  public ResponseEntity<List<String>> getStadiumNamesByDateRange(
-    //     @RequestParam String startDate,
-    //     @RequestParam String endDate) {
-    //     List<String> stadiumNames = scheduleService.findStadiumNamesByDateRange(startDate, endDate);
-    //     return ResponseEntity.ok(stadiumNames);
-    // }
-
+    @GetMapping("/maystadium")
+    public List<String> mayStadium(){
+        return scheduleService.mayStadium();
+    }
 
     
 
