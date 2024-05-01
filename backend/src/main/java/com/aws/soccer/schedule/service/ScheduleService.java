@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface ScheduleService {
     
-    List<String> mayStadium();
+    List<String> findStadiumNamesForMay();
 
     
 }

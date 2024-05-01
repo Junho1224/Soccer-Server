@@ -2,6 +2,13 @@ import { Heading } from 'components/Heading';
 
 function Home() {
 
+  const clickButtonHandler = (e:any) => {
+    alert('test'+ e.target.value)
+    // instance().get(`/${e.target.value}`)
+    // .then((res:any) => { alert(JSON.stringify(res)) })
+    // .catch((error:any) => { alert(JSON.stringify(error)) })
+  }
+
 
   const question = [
     ["1", "전체 축구팀 목록을 팀이름 오름차순으로 출력하시오."],
@@ -45,14 +52,17 @@ function Home() {
           <th>답</th>
         </tr>
       </thead>
-    </table>
     <tbody>
-      {question.map((row:any) => <tr>
+      {question.map((row:any) => 
+      <tr key={row[0]}>
         <td>{row[0]}</td>
         <td>{row[1]}</td>
-        <td><button>답</button></td>
-      </tr>) }
+        <td><button value={row[0]} onClick={clickButtonHandler}>답</button></td>
+      </tr>
+    )}
     </tbody>
+    </table>
+
 
 
 

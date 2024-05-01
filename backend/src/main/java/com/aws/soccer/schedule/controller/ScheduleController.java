@@ -24,9 +24,9 @@ public class ScheduleController {
 
     private final ScheduleServiceImpl scheduleService;
 
-    @GetMapping("/maystadium")
-    public List<String> mayStadium(){
-        return scheduleService.mayStadium();
+    @GetMapping("/findStadiumNamesForMay")
+    public List<String> findStadiumNamesForMay(){
+        return scheduleService.findStadiumNamesForMay();
     }
 
     
