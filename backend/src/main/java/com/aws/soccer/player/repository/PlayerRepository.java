@@ -11,18 +11,18 @@ import java.util.List;
 @Repository
 public interface PlayerRepository extends JpaRepository<Player, Long> {
 //Q2v
-    @Query("select distinct p.POSITION from player as p")
+    @Query("select distinct p.position from player as p")
     public List<String> getDistinctPosition();
 //Q3
     @Query("select distinct" +
             " case" +
-            " when p.POSITION = '' then '신입' else p.POSITION" +
+            " when p.position = '' then '신입' else p.position" +
             " end" +
             " from player p")
     public List<String> getDistinctByPositionIfnull();
 //Q4v
-    @Query("select p.playerName from player as p where p.teamId = 'k02' and p.POSITION = 'GK'")
-    public List<String> getPlayerNameFromSuwon();
+    @Query("select p.playerName from player as p where p.teamId = 'k02' and p.position = 'GK'")
+    public List<String> getPlayerNameFromRegion();
 
 //Q5v
     @Query("select p.playerName \n" +
@@ -33,21 +33,21 @@ public interface PlayerRepository extends JpaRepository<Player, Long> {
 //Q6v
     @Query("select p.playerName\n" +
             "from player p\n" +
-            "where p.POSITION= 'MF'\n" +
+            "where p.position= 'MF'\n" +
             "and (p.height between '170' and '180')\n" +
             "and p.teamId in (select t.teamId\n" +
             "                from team as t\n" +
             "                where t.team = '삼성블루윙즈' or t.team = '드래곤즈')")
-    public List<String> getplayersByCondition();
+    public List<String> getPlayersByCondition();
 
 //Q7v
     @Query("select new com.aws.soccer.player.model.PlayerDTO(p.id, p.playerId, p.playerName," +
-            " p.teamId, p.POSITION, p.height, p.weight, p.backNo, p.birthDate," +
-            " p.solar, p.ePlayerName, p.nickname, p.joinYyyy, p.nation) from player p where p.POSITION = 'GK'" +
+            " p.teamId, p.position, p.height, p.weight, p.backNo, p.birthDate," +
+            " p.solar, p.ePlayerName, p.nickname, p.joinyyyy, p.nation) from player p where p.position = 'GK'" +
             " and p.teamId = (select t.teamId from team t where t.region = '수원')")
-    public List<PlayerDTO> getSuwonGK();
+    public List<PlayerDTO> getPlayersByPositionAndRegion();
 
-//Q8x
+////Q8x
 //    @Query("select p.playerName," +
 //            "       ifnull(nullif(height,''),'0') as height," +
 //            "       ifnull(nullif(weight,''),'0') as weight" +
@@ -56,10 +56,10 @@ public interface PlayerRepository extends JpaRepository<Player, Long> {
 //            "                 from team as t" +
 //            "                 where t.region = '서울')" +
 //            " order by p.weight desc, p.height desc")
-//    public List<PlayerDTO> getPlayersByHeightAndWeight();
-
-
-//Q18v
+//    public List<PlayerDTO> getPlayersHeightAndWeightByTeamId();
+//
+//
+////Q18x
 //    @Query(value = "select * from player limit 5", nativeQuery = true)
 //    public List<PlayerDTO> getPlayersLimit();
 
@@ -70,10 +70,10 @@ public interface PlayerRepository extends JpaRepository<Player, Long> {
 //            "     where t.teamId = p.teamId),\n" +
 //            "    p.playerName, p.backNo\n" +
 //            " from player p\n" +
-//            " where p.POSITION = 'MF'")
-//    public List<PlayerDTO> getPlayersByMFInfo();
-
-//Q21
+//            " where p.position = 'MF'")
+//    public List<PlayerDTO> getPlayersByPosition();
+//
+////Q21
 //    @Query(value = "select" +
 //            " (select t.team" +
 //            " from team t" +
@@ -81,9 +81,9 @@ public interface PlayerRepository extends JpaRepository<Player, Long> {
 //            " from player p " +
 //            " order by p.height desc limit '5'", nativeQuery = true)
 //    public List<PlayerDTO> getTallestPlayers();
-
-//22x
-//    @Query("SELECT NEW com.aws.soccer.player.model.PlayerDTO(p.id, p.playerId, p.playerName, p.teamId, p.POSITION, p.height, p.weight, p.backNo, p.birthDate, p.solar, p.ePlayerName, p.nickname, p.joinYyyy, p.nation)" +
+//
+////22x
+//    @Query("SELECT NEW com.aws.soccer.player.model.PlayerDTO(p.id, p.playerId, p.playerName, p.teamId, p.position, p.height, p.weight, p.backNo, p.birthDate, p.solar, p.ePlayerName, p.nickname, p.joinyyyy, p.nation)" +
 //            " FROM player p" +
 //            " JOIN (SELECT pl.teamId, ROUND(AVG(pl.height), 2) AS average_height" +
 //            "       FROM player pl" +

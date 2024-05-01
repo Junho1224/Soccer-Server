@@ -19,7 +19,7 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(path = "/api/player")
+@RequestMapping(path = "/api/search")
 @ApiResponses(value = {
         @ApiResponse(responseCode = "400", description = "Invalid ID supplied"),
         @ApiResponse(responseCode = "404", description = "dd")})
@@ -38,8 +38,8 @@ public class PlayerController {
     }
 //Q4v
     @GetMapping(path = "/four")
-    public ResponseEntity<List<String>> getPlayerNameFromSuwon(){
-        return ResponseEntity.ok(service.getPlayerNameFromSuwon());
+    public ResponseEntity<List<String>> getPlayerNameFromRegion(){
+        return ResponseEntity.ok(service.getPlayerNameFromRegion());
     }
 
 //Q5v
@@ -51,38 +51,38 @@ public class PlayerController {
 
 //Q6v
     @GetMapping(path = "/six")
-    public ResponseEntity<List<String>> getPlayerCondition(){
-        return ResponseEntity.ok(service.getplayersByCondition());
+    public ResponseEntity<List<String>> getPlayersByCondition(){
+        return ResponseEntity.ok(service.getPlayersByCondition());
     }
 //Q7
     @GetMapping(path = "/seven")
-    public ResponseEntity<List<PlayerDTO>> getSuwonGK(){
-        return ResponseEntity.ok(service.getSuwonGK());
+    public ResponseEntity<List<PlayerDTO>> getPlayersByPositionAndRegion(){
+        return ResponseEntity.ok(service.getPlayersByPositionAndRegion());
     }
 
 //Q8v
 //    @GetMapping(path = "/eight")
-//    public ResponseEntity<List<PlayerDTO>> getPlayersByHeightAndWeight(){
-//        return ResponseEntity.ok(service.getPlayersByHeightAndWeight());
+//    public ResponseEntity<List<PlayerDTO>> getPlayersHeightAndWeightByTeamId(){
+//        return ResponseEntity.ok(service.getPlayersHeightAndWeightByTeamId());
 //    }
-
-//Q18x
+//
+////Q18x
 //    @GetMapping(path = "/eight-teen")
 //    public ResponseEntity<List<PlayerDTO>> getPlayerLimit(){
 //        return ResponseEntity.ok(service.getPlayersLimit());
 //    }
-//Q20x
+////Q20x
 //    @GetMapping(path = "/twenty")
-//    public ResponseEntity<List<PlayerDTO>> getPlayersByMFInfo(){
+//    public ResponseEntity<List<PlayerDTO>> getPlayersByPosition(){
 //        log.info("20번 controller");
-//        return ResponseEntity.ok(service.getPlayersByMFInfo());
+//        return ResponseEntity.ok(service.getPlayersByPosition());
 //    }
-//Q21
+////Q21
 //    @GetMapping(path = "/twenty-one")
 //    public ResponseEntity<List<PlayerDTO>> getTallestPlayers(){
 //        return ResponseEntity.ok(service.getTallestPlayers());
 //    }
-//Q22x
+////Q22x
 //    @GetMapping(path = "/twenty-two")
 //    public ResponseEntity<List<PlayerDTO>> getShorterThanTeamAvg(){
 //        log.info("22번 controller");

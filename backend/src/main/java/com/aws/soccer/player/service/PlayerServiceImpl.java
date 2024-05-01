@@ -16,7 +16,6 @@ public class PlayerServiceImpl implements PlayerService {
 //Q2
     @Override
     public List<String> getDistinctPosition() {
-        log.info("test : {}",repository.getDistinctPosition());
         return repository.getDistinctPosition();
     }
 
@@ -27,9 +26,8 @@ public class PlayerServiceImpl implements PlayerService {
 
     //Q4
     @Override
-    public List<String> getPlayerNameFromSuwon() {
-        log.info("test : {}",repository.getPlayerNameFromSuwon());
-        return repository.getPlayerNameFromSuwon();
+    public List<String> getPlayerNameFromRegion() {
+        return repository.getPlayerNameFromRegion();
     }
 //Q5
     @Override
@@ -39,41 +37,39 @@ public class PlayerServiceImpl implements PlayerService {
 
 //Q6
     @Override
-    public List<String> getplayersByCondition() {
-        return repository.getplayersByCondition();
+    public List<String> getPlayersByCondition() {
+        return repository.getPlayersByCondition();
     }
 //Q7
     @Override
-    public List<PlayerDTO> getSuwonGK() {
-        return repository.getSuwonGK();
+    public List<PlayerDTO> getPlayersByPositionAndRegion() {
+        return repository.getPlayersByPositionAndRegion();
     }
-    //Q8
+//Q8
 //    @Override
-//    public List<PlayerDTO> getPlayersByHeightAndWeight() {
-//        return repository.getPlayersByHeightAndWeight();
+//    public List<PlayerDTO> getPlayersHeightAndWeightByTeamId() {
+//        return repository.getPlayersHeightAndWeightByTeamId();
 //    }
-
-//Q18
+//
+////Q18
 //    @Override
 //    public List<PlayerDTO> getPlayersLimit() {
 //        return repository.getPlayersLimit();
 //    }
-//Q20
+////Q20
 //    @Override
-//    public List<PlayerDTO> getPlayersByMFInfo() {
-//        log.info("20번 {}",repository.getPlayersByMFInfo());
-//        return repository.getPlayersByMFInfo();
+//    public List<PlayerDTO> getPlayersByPosition() {
+//        return repository.getPlayersByPosition();
 //    }
-
+////Q21
 //    @Override
 //    public List<PlayerDTO> getTallestPlayers() {
 //        return repository.getTallestPlayers();
 //    }
-
-    //Q22
+//
+////Q22
 //    @Override
 //    public List<PlayerDTO> getShorterThanTeamAvg() {
-//        log.info("키작은 사람들 모음 : {}",repository.getShorterThanTeamAvg());
 //        return repository.getShorterThanTeamAvg();
 //    }
 

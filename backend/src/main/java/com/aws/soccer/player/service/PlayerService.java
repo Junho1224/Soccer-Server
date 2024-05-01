@@ -10,22 +10,22 @@ public interface PlayerService {
     List<String> getDistinctPosition();
     List<String> getDistinctByPositionIfnull();
 
-    List<String> getPlayerNameFromSuwon();
+    List<String> getPlayerNameFromRegion();
 
     List<String> getPlayersByNameAndHeight();
 
-    List<String> getplayersByCondition();
+    List<String> getPlayersByCondition();
 
-    List<PlayerDTO> getSuwonGK();
+    List<PlayerDTO> getPlayersByPositionAndRegion();
 
-//    List<PlayerDTO> getPlayersByHeightAndWeight();
-
+//    List<PlayerDTO> getPlayersHeightAndWeightByTeamId();
+//
 //    List<PlayerDTO> getPlayersLimit();
-
-//    List<PlayerDTO> getPlayersByMFInfo();
-
+//
+//    List<PlayerDTO> getPlayersByPosition();
+//
 //    List<PlayerDTO> getTallestPlayers();
-
+//
 //    List<PlayerDTO> getShorterThanTeamAvg();
 
 }
