@@ -1,5 +1,5 @@
 select * from stadium;
-
+--
 -- INSERT INTO stadium (stadium_id, stadium_name, hometeam_id, seat_count, address, ddd, tel) VALUES  ('D03','전주월드컵경기장','K05',28000,'전북 전주시 덕진구 반월동  763-1','063','273-1763');
 -- INSERT INTO stadium (stadium_id, stadium_name, hometeam_id, seat_count, address, ddd, tel) VALUES  ('B02','성남종합운동장','K08',27000,'경기도 성남시 분당구 야탑동  486','031','753-3956');
 -- INSERT INTO stadium (stadium_id, stadium_name, hometeam_id, seat_count, address, ddd, tel) VALUES  ('C06','포항스틸야드','K03',25000,'경북  포항시 남구 괴동 1','054','282-2002');
@@ -19,11 +19,11 @@ select * from stadium;
 -- INSERT INTO stadium (stadium_id, stadium_name, hometeam_id, seat_count, address, ddd, tel) VALUES  ('F02','부산시민경기장','',30000,'부산광역시','051','');
 -- INSERT INTO stadium (stadium_id, stadium_name, hometeam_id, seat_count, address, ddd, tel) VALUES  ('F03','일산경기장','',20000,'경기도  일산시','031','');
 -- INSERT INTO stadium (stadium_id, stadium_name, hometeam_id, seat_count, address, ddd, tel) VALUES  ('F04','마산경기장','',20000,'경남  마산시','055','');
-
-
-
-
-
+--
+--
+--
+--
+--
 -- INSERT INTO team (team_id,region,team,e_team,orig_yyyy,stadium_id,zip_code1,zip_code2,address,ddd,tel,fax,homepage,owner) VALUES  ('K05','전북','현대모터스','CHUNBUK  HYUNDAI MOTORS  FC','1995','D03','560','190',
 -- '전북 전주시 덕진구 반월동 763-1  전주월드컵경기장  내','063','273-1763','273-1762','http://www.hyundai-motorsfc.com','');
 -- INSERT INTO team (team_id,region,team,e_team,orig_yyyy,stadium_id,zip_code1,zip_code2,address,ddd,tel,fax,homepage,owner) VALUES  ('K08','성남','일화천마','SEONGNAM  ILHWA CHUNMA FC','1988','B02','462',
@@ -54,9 +54,9 @@ select * from stadium;
 -- '제주 서귀포시 강정동  3355-5','064','3631-2460','3631-2468','http://www.jeju-utd.com','');
 -- INSERT INTO team (team_id,region,team,e_team,orig_yyyy,stadium_id,zip_code1,zip_code2,address,ddd,tel,fax,homepage,owner) VALUES  ('K15','대구','대구FC','DAEGU  FC','2002','A05','777','888',
 -- '대구광역시 수성구 대흥동 504  대구스타디움  내','053','5566-3967','5566-3970','http://www.daegufc.co.kr','');
-
-
-
+--
+--
+--
 -- INSERT INTO schedule(stadium_id ,sche_date ,gubun ,hometeam_id ,awayteam_id ,home_score ,away_score) VALUES ('C02','20120501','Y','K06','K10','2','0');
 -- INSERT INTO schedule(stadium_id ,sche_date ,gubun ,hometeam_id ,awayteam_id ,home_score ,away_score) VALUES ('B04','20120505','Y','K02','K01','1','2');
 -- INSERT INTO schedule(stadium_id ,sche_date ,gubun ,hometeam_id ,awayteam_id ,home_score ,away_score) VALUES ('B05','20120505','Y','K09','K08','1','3');
@@ -237,8 +237,8 @@ select * from stadium;
 -- INSERT INTO schedule(stadium_id ,sche_date ,gubun ,hometeam_id ,awayteam_id ,home_score ,away_score) VALUES ('C05','20120904','Y','K11','K04','2','2');
 -- INSERT INTO schedule(stadium_id ,sche_date ,gubun ,hometeam_id ,awayteam_id ,home_score ,away_score) VALUES ('C06','20120904','Y','K03','K10','0','0');
 -- INSERT INTO schedule(stadium_id ,sche_date ,gubun ,hometeam_id ,awayteam_id ,home_score ,away_score) VALUES ('C02','20120904','Y','K06','K07','2','2');
-
-
+--
+--
 -- INSERT INTO player (player_id,player_name,team_id,e_player_name,nickname,join_yyyy,POSITION,back_no,nation,birth_date,solar,height,weight) VALUES  ('2009175','우르모브','K06','','','2009','DF','4','유고','30-AUG-1987','1','180','70');
 -- INSERT INTO player (player_id,player_name,team_id,e_player_name,nickname,join_yyyy,POSITION,back_no,nation,birth_date,solar,height,weight) VALUES  ('2007188','윤희준','K06','','','2005','DF','15','','01-NOV-1982','1','180','74');
 -- INSERT INTO player (player_id,player_name,team_id,e_player_name,nickname,join_yyyy,POSITION,back_no,nation,birth_date,solar,height,weight) VALUES  ('2012073','김규호','K06','','','2011','DF','23','','13-JUL-1989','1','177','72');
