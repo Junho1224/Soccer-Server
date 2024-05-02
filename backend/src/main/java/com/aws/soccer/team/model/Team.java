@@ -33,11 +33,4 @@ public class Team {
     private String homepage;
     private String OWNER;
 
-//    @OneToMany(mappedBy = "team_id",cascade = CascadeType.REMOVE)
-//    private List<Player> players;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "stadium_id")
-//    private Stadium stadium;
-
 }
