@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 //안터페이스는 속성을 가질 수 없음
 //클래스가 안보임
 
+@SuppressWarnings("rawtypes")
 @Repository
 public interface PlayerRepository extends JpaRepository<Player, Long>, PlayerJpqlRepository, PlayerDAO {
 
