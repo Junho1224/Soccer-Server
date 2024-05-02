@@ -25,7 +25,7 @@ public class PlayerRouter {
            case "3" -> repository.getDistinctByPositionIfnull();
             case "4" -> repository.getPlayerNameFromRegion(teamId,position);
            case "5" -> repository.getPlayersByNameAndHeight(teamId, player_name,height);
-           case "6" -> repository.getPlayersByCondition(position,height);
+        //    case "6" -> repository.getPlayersByCondition(position,height);
            case "7" -> repository.getPlayersByPositionAndRegion(position,region);
             case "8" -> null;
             case "9" -> null;
