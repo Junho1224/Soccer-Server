@@ -13,40 +13,40 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PlayerServiceImpl implements PlayerService {
     private final PlayerRepository repository;
-//Q2
-    @Override
-    public List<String> getDistinctPosition() {
-        log.info("test : {}",repository.getDistinctPosition());
-        return repository.getDistinctPosition();
-    }
+// Q2
+//     @Override
+//     public List<String> getDistinctPosition() {
+//         log.info("test : {}",repository.getDistinctPosition());
+//         return repository.getDistinctPosition();
+//     }
 
-    @Override
-    public List<String> getDistinctByPositionIfnull() {
-        return repository.getDistinctByPositionIfnull();
-    }
+//     @Override
+//     public List<String> getDistinctByPositionIfnull() {
+//         return repository.getDistinctByPositionIfnull();
+//     }
 
-    //Q4
-    @Override
-    public List<String> getPlayerNameFromSuwon() {
-        log.info("test : {}",repository.getPlayerNameFromSuwon());
-        return repository.getPlayerNameFromSuwon();
-    }
-//Q5
-    @Override
-    public List<String> getPlayersByNameAndHeight() {
-        return repository.getPlayersByNameAndHeight();
-    }
+//     //Q4
+//     @Override
+//     public List<String> getPlayerNameFromSuwon() {
+//         log.info("test : {}",repository.getPlayerNameFromSuwon());
+//         return repository.getPlayerNameFromSuwon();
+//     }
+// //Q5
+//     @Override
+//     public List<String> getPlayersByNameAndHeight() {
+//         return repository.getPlayersByNameAndHeight();
+//     }
 
-//Q6
-    @Override
-    public List<String> getplayersByCondition() {
-        return repository.getplayersByCondition();
-    }
-//Q7
-    @Override
-    public List<PlayerDTO> getSuwonGK() {
-        return repository.getSuwonGK();
-    }
+// //Q6
+//     @Override
+//     public List<String> getplayersByCondition() {
+//         return repository.getplayersByCondition();
+//     }
+// //Q7
+//     @Override
+//     public List<PlayerDTO> getSuwonGK() {
+//         return repository.getSuwonGK();
+//     }
     //Q8
 //    @Override
 //    public List<PlayerDTO> getPlayersByHeightAndWeight() {

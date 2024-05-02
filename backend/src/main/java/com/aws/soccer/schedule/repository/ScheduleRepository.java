@@ -9,10 +9,9 @@ import org.springframework.stereotype.Repository;
 import com.aws.soccer.schedule.model.Schedule;
 
 @Repository
-public interface ScheduleRepository extends JpaRepository<Schedule, Long> {
+public interface ScheduleRepository extends JpaRepository<Schedule, Long>, ScheduleJpqlRepository {
 
-    @Query("SELECT (SELECT s.stadiumName FROM stadium s WHERE sc.stadiumId = s.stadiumId) as 경기장 ,sc.scheDate as 경기날짜 FROM schedule sc WHERE sc.scheDate LIKE '201205%'")
-    List<String> findStadiumNamesForMay();
+   
 
 
 

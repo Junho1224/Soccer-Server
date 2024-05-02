@@ -7,16 +7,16 @@ import java.util.List;
 
 public interface PlayerService {
 
-    List<String> getDistinctPosition();
-    List<String> getDistinctByPositionIfnull();
+    // List<String> getDistinctPosition();
+    // List<String> getDistinctByPositionIfnull();
 
-    List<String> getPlayerNameFromSuwon();
+    // List<String> getPlayerNameFromSuwon();
 
-    List<String> getPlayersByNameAndHeight();
+    // List<String> getPlayersByNameAndHeight();
 
-    List<String> getplayersByCondition();
+    // List<String> getplayersByCondition();
 
-    List<PlayerDTO> getSuwonGK();
+    // List<PlayerDTO> getSuwonGK();
 
 //    List<PlayerDTO> getPlayersByHeightAndWeight();
 

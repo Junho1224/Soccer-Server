@@ -2,8 +2,8 @@ package com.aws.soccer.common.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-
 import java.util.Arrays;
+
 @RequiredArgsConstructor
 @Getter
 public enum Role { // implements GrantedAuthority

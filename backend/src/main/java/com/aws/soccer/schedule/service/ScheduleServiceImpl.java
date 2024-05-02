@@ -14,8 +14,8 @@ public class ScheduleServiceImpl implements ScheduleService {
 
     private final ScheduleRepository repository;
 
-    @Override
-    public List<String> findStadiumNamesForMay() {
-        return repository.findStadiumNamesForMay();
-    } // 23
+//     @Override
+//     public List<String> findStadiumNamesForMay() {
+//         return repository.findStadiumNamesForMay();
+//     } // 23
 }

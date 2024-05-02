@@ -22,7 +22,7 @@ public class Schedule {
     private String scheDate;
     private String gubun;
     private String hometeamId;
-    private String awayteamId;  
+    private String awayteamId;
     private Long home_score;
     private Long away_score;
 
