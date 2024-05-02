@@ -7,13 +7,12 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Log4j2
 @CrossOrigin(origins = "*")
@@ -25,10 +24,11 @@ import java.util.List;
         @ApiResponse(responseCode = "404", description = "dd")})
 
 public class PlayerController {
+    private final PlayerRouter router;
     private final PlayerService service;
 //Q2v
     @GetMapping(path = "/two")
-    public ResponseEntity<List<String>> distinctPositionType(){
+    public ResponseEntity<List<Map<String,Object>>> distinctPositionType(){
         return ResponseEntity.ok(service.getDistinctPosition());
     }
 //Q3
@@ -60,33 +60,19 @@ public class PlayerController {
         return ResponseEntity.ok(service.getSuwonGK());
     }
 
-//Q8v
-//    @GetMapping(path = "/eight")
-//    public ResponseEntity<List<PlayerDTO>> getPlayersByHeightAndWeight(){
-//        return ResponseEntity.ok(service.getPlayersByHeightAndWeight());
-//    }
+    @GetMapping(path = "/search")
+    public ResponseEntity <List<Map<String, Object>>> searchPlayer(
+            @RequestParam(value="q",required=true) String q,
+            @RequestParam(value="playerName",required=false) String playerName,
+            @RequestParam(value="position",required=false) String position,
+            @RequestParam(value="teamId",required=false) String teamId
+    ){
+        log.info("Controller searchPlayer q is {}");
 
-//Q18x
-//    @GetMapping(path = "/eight-teen")
-//    public ResponseEntity<List<PlayerDTO>> getPlayerLimit(){
-//        return ResponseEntity.ok(service.getPlayersLimit());
-//    }
-//Q20x
-//    @GetMapping(path = "/twenty")
-//    public ResponseEntity<List<PlayerDTO>> getPlayersByMFInfo(){
-//        log.info("20번 controller");
-//        return ResponseEntity.ok(service.getPlayersByMFInfo());
-//    }
-//Q21
-//    @GetMapping(path = "/twenty-one")
-//    public ResponseEntity<List<PlayerDTO>> getTallestPlayers(){
-//        return ResponseEntity.ok(service.getTallestPlayers());
-//    }
-//Q22x
-//    @GetMapping(path = "/twenty-two")
-//    public ResponseEntity<List<PlayerDTO>> getShorterThanTeamAvg(){
-//        log.info("22번 controller");
-//        return ResponseEntity.ok(service.getShorterThanTeamAvg());
-//    }
+        List<Map<String, Object>> o = router.execute(q);
+
+        return null;
+    }
+
 
 }

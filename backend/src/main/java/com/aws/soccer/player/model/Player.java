@@ -21,12 +21,8 @@ public class Player {
     private String playerName;
     private String ePlayerName;
     private String nickname;
-
-    @Column(name = "join_yyyy")
-    private String joinyyyy;
-
-    @Column(name = "POSITION")
-    private String position ;
+    private String joinYyyy;
+    private String POSITION ;
     private String backNo ;
     private String nation ;
     private String birthDate ;

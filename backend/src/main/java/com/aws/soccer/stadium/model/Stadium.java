@@ -27,7 +27,7 @@ public class Stadium {
     private String address;
     private String ddd;
     private String tel;
-//
+
 //    @OneToMany(mappedBy = "stadium_id", cascade = CascadeType.REMOVE)
 //    private List<Team> teams;
 //

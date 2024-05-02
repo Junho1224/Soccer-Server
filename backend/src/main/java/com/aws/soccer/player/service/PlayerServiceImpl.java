@@ -1,81 +1,86 @@
 package com.aws.soccer.player.service;
 
 import com.aws.soccer.player.model.PlayerDTO;
-import com.aws.soccer.player.repository.PlayerRepository;
+import com.aws.soccer.player.repository.PlayerJpqlRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Log4j2
 @Service
 @RequiredArgsConstructor
 public class PlayerServiceImpl implements PlayerService {
-    private final PlayerRepository repository;
-//Q2
     @Override
-    public List<String> getDistinctPosition() {
-        log.info("test : {}",repository.getDistinctPosition());
-        return repository.getDistinctPosition();
+    public List<Map<String, Object>> getDistinctPosition() {
+        return List.of();
     }
 
     @Override
     public List<String> getDistinctByPositionIfnull() {
-        return repository.getDistinctByPositionIfnull();
+        return List.of();
     }
 
-    //Q4
     @Override
     public List<String> getPlayerNameFromSuwon() {
-        log.info("test : {}",repository.getPlayerNameFromSuwon());
-        return repository.getPlayerNameFromSuwon();
+        return List.of();
     }
-//Q5
+
     @Override
     public List<String> getPlayersByNameAndHeight() {
-        return repository.getPlayersByNameAndHeight();
+        return List.of();
     }
 
-//Q6
     @Override
     public List<String> getplayersByCondition() {
-        return repository.getplayersByCondition();
+        return List.of();
     }
-//Q7
+
     @Override
     public List<PlayerDTO> getSuwonGK() {
-        return repository.getSuwonGK();
+        return List.of();
     }
-    //Q8
-//    @Override
-//    public List<PlayerDTO> getPlayersByHeightAndWeight() {
-//        return repository.getPlayersByHeightAndWeight();
-//    }
+//    private final PlayerJpqlRepository repository;
 
-//Q18
+//    //Q2
 //    @Override
-//    public List<PlayerDTO> getPlayersLimit() {
-//        return repository.getPlayersLimit();
+//    public List<Map<String, Object>> getDistinctPosition() {
+//        log.info("test : {}", repository.getDistinctPosition());
+//        return repository.getDistinctPosition();
 //    }
-//Q20
+//
 //    @Override
-//    public List<PlayerDTO> getPlayersByMFInfo() {
-//        log.info("20번 {}",repository.getPlayersByMFInfo());
-//        return repository.getPlayersByMFInfo();
+//    public List<String> getDistinctByPositionIfnull() {
+//        return repository.getDistinctByPositionIfnull();
 //    }
-
+//
+//    //Q4
 //    @Override
-//    public List<PlayerDTO> getTallestPlayers() {
-//        return repository.getTallestPlayers();
+//    public List<String> getPlayerNameFromSuwon() {
+//        log.info("test : {}", repository.getPlayerNameFromSuwon());
+//        return repository.getPlayerNameFromSuwon();
 //    }
-
-    //Q22
+//
+//    //Q5
 //    @Override
-//    public List<PlayerDTO> getShorterThanTeamAvg() {
-//        log.info("키작은 사람들 모음 : {}",repository.getShorterThanTeamAvg());
-//        return repository.getShorterThanTeamAvg();
+//    public List<String> getPlayersByNameAndHeight() {
+//        return repository.getPlayersByNameAndHeight();
 //    }
+//
+//    //Q6
+//    @Override
+//    public List<String> getplayersByCondition() {
+//        return repository.getplayersByCondition();
+//    }
+//
+//    //Q7
+//    @Override
+//    public List<PlayerDTO> getSuwonGK() {
+//        return repository.getSuwonGK();
+//    }
+//
 
 
 }

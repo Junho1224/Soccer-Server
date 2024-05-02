@@ -1,12 +1,6 @@
 package com.aws.soccer.stadium.service;
 
-import java.util.List;
+import org.springframework.stereotype.Service;
 
 public interface StadiumService {
-
-    List<String> teamField();
-    List<String> manyInfo();
-//    List<String> bigWin();
-    List<String> withNoHomeGround();
-    // List<String> mayStadium();
 }

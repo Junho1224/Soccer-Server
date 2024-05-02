@@ -3,13 +3,12 @@ package com.aws.soccer.stadium.controller;
 
 import com.aws.soccer.stadium.service.StadiumServiceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequiredArgsConstructor
@@ -17,31 +16,20 @@ import java.util.List;
 @RestController
 public class StadiumController {
 
-    private final StadiumServiceImpl service;
+    private final StadiumRouter router;
 
 
-    @GetMapping("/teamfield")
-    public List<String> teamField(){
-        return service.teamField();
+    @GetMapping("/search")
+    public ResponseEntity<List<Map<String,Object>>> getStadiumNameWithTeam(
+            @RequestParam(value = "q", required = true) String q,
+            @RequestParam(value = "playerName", required = false) String playerName,
+            @RequestParam(value = "position", required = false) String position,
+            @RequestParam(value = "teamId", required = false) String teamId
+    ){
+        List<Map<String, Object>> o = router.execute(q);
+
+        return ResponseEntity.ok(o);
     }
-    @GetMapping("/manyinfo")
-    public List<String> manyInfo(){
-        return service.manyInfo();
-    }
-//    @GetMapping("/bigwin")
-//    public List<String> bigWin(){
-//        return service.bigWin();
-//    }
-    @GetMapping("/withnohomeground")
-    public List<String> withNoHomeGround(){
-        return service.withNoHomeGround();
-    }
-    // @GetMapping("/maystadium")
-    // public List<String> mayStadium(){
-    //     return service.mayStadium();
-    // }
-
-
 
 
 
