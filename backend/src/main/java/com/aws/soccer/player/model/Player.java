@@ -22,11 +22,9 @@ public class Player {
     private String ePlayerName;
     private String nickname;
 
-    @Column(name = "join_yyyy")
-    private String joinyyyy ;
+    private String joinYyyy ;
 
-    @Column(name = "POSITION")
-    private String  position;
+    private String  POSITION;
 
     private String backNo ;
     private String nation ;

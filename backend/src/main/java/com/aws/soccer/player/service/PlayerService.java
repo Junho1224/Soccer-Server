@@ -4,28 +4,29 @@ import com.aws.soccer.player.model.Player;
 import com.aws.soccer.player.model.PlayerDTO;
 
 import java.util.List;
+import java.util.Map;
 
 public interface PlayerService {
-
-    List<String> getDistinctPosition();
-    List<String> getDistinctByPositionIfnull();
-
-    List<String> getPlayerNameFromRegion();
-
-    List<String> getPlayersByNameAndHeight();
-
-    List<String> getPlayersByCondition();
-
-    List<PlayerDTO> getPlayersByPositionAndRegion();
-
-//    List<PlayerDTO> getPlayersHeightAndWeightByTeamId();
 //
-//    List<PlayerDTO> getPlayersLimit();
+//    List<Map<String,Object>> getDistinctPosition();
+//    List<Map<String,Object>> getDistinctByPositionIfnull();
 //
-//    List<PlayerDTO> getPlayersByPosition();
+//    List<Map<String,Object>> getPlayerNameFromRegion(String q,String teamId, String position);
 //
-//    List<PlayerDTO> getTallestPlayers();
+//    List<Map<String,Object>> getPlayersByNameAndHeight();
 //
-//    List<PlayerDTO> getShorterThanTeamAvg();
+//    List<Map<String,Object>> getPlayersByCondition();
+//
+//    List<Map<String,Object>> getPlayersByPositionAndRegion();
+
+//    List<Map<String,Object>> getPlayersHeightAndWeightByTeamId();
+//
+//    List<Map<String,Object>> getPlayersLimit();
+//
+//    List<Map<String,Object>> getPlayersByPosition();
+//
+//    List<Map<String,Object>> getTallestPlayers();
+//
+//    List<Map<String,Object>> getShorterThanTeamAvg();
 
 }
