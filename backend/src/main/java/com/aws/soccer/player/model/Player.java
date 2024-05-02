@@ -21,9 +21,11 @@ public class Player {
     private String playerName;
     private String ePlayerName;
     private String nickname;
+
     private String joinYyyy ;
-    //소문자
-    private String POSITION ;
+
+    private String  POSITION;
+
     private String backNo ;
     private String nation ;
     private String birthDate ;

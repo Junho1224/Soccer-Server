@@ -7,26 +7,26 @@ import java.util.List;
 import java.util.Map;
 
 public interface PlayerService {
+//
+//    List<Map<String,Object>> getDistinctPosition();
+//    List<Map<String,Object>> getDistinctByPositionIfnull();
+//
+//    List<Map<String,Object>> getPlayerNameFromRegion(String q,String teamId, String position);
+//
+//    List<Map<String,Object>> getPlayersByNameAndHeight();
+//
+//    List<Map<String,Object>> getPlayersByCondition();
+//
+//    List<Map<String,Object>> getPlayersByPositionAndRegion();
 
-    // List<String> getDistinctPosition();
-    // List<String> getDistinctByPositionIfnull();
-
-    // List<String> getPlayerNameFromSuwon();
-
-    // List<String> getPlayersByNameAndHeight();
-
-    // List<String> getplayersByCondition();
-
-    // List<PlayerDTO> getSuwonGK();
-
-//    List<PlayerDTO> getPlayersByHeightAndWeight();
-
-//    List<PlayerDTO> getPlayersLimit();
-
-//    List<PlayerDTO> getPlayersByMFInfo();
-
-//    List<PlayerDTO> getTallestPlayers();
-
-//    List<PlayerDTO> getShorterThanTeamAvg();
+//    List<Map<String,Object>> getPlayersHeightAndWeightByTeamId();
+//
+//    List<Map<String,Object>> getPlayersLimit();
+//
+//    List<Map<String,Object>> getPlayersByPosition();
+//
+//    List<Map<String,Object>> getTallestPlayers();
+//
+//    List<Map<String,Object>> getShorterThanTeamAvg();
 
 }
