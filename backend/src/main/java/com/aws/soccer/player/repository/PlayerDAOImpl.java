@@ -1,44 +1,52 @@
 package com.aws.soccer.player.repository;
 
-import org.springframework.stereotype.Repository;
-
-import com.aws.soccer.player.model.Player;
-
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+import com.aws.soccer.player.model.PlayerDTO;
+import com.aws.soccer.player.model.QPlayer;
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 
-@Repository
+import java.util.List;
+
 @RequiredArgsConstructor
-@PersistenceContext
 public class PlayerDAOImpl implements PlayerDAO{
-    
-    
-    private final EntityManager em;
-    
-    @Override
-    public Player p1(Player player,Long id) {
-        return em.find(Player.class, 1L);
-    }
-    
-    @Override
-    public Player p2(Player player, Long id) {
-       em.createQuery("select a from Player a where a.id = :id",Player.class)
-       .setParameter("id", id)
-       .getResultList();
-    return em.find(Player.class, 1L);
-    }
+    private final JPAQueryFactory jpaQueryFactory;
 
     @Override
-    public void insert(Player player) {
-        em.persist(player);
+    public List<PlayerDTO> getAllPlayers() {
+        return jpaQueryFactory.select(
+                        QPlayer.player.id,
+                        QPlayer.player.backNo,
+                        QPlayer.player.playerName,
+                        QPlayer.player.ePlayerName,
+                        QPlayer.player.nickname,
+                        QPlayer.player.joinYyyy,
+                        QPlayer.player.POSITION,
+                        QPlayer.player.backNo,
+                        QPlayer.player.nation,
+                        QPlayer.player.birthDate,
+                        QPlayer.player.solar,
+                        QPlayer.player.height,
+                        QPlayer.player.weight,
+                        QPlayer.player.teamId
+                ).from(QPlayer.player)
+                .fetch()
+                .stream().map(tuple -> PlayerDTO.builder()
+                        .id(tuple.get(QPlayer.player.id))
+                        .backNo(tuple.get(QPlayer.player.backNo))
+                        .playerName(tuple.get(QPlayer.player.playerName))
+                        .ePlayerName(tuple.get(QPlayer.player.ePlayerName))
+                        .nickname(tuple.get(QPlayer.player.nickname))
+                        .joinYyyy(tuple.get(QPlayer.player.joinYyyy))
+                        .POSITION(tuple.get(QPlayer.player.POSITION))
+                        .backNo(tuple.get(QPlayer.player.backNo))
+                        .nation(tuple.get(QPlayer.player.nation))
+                        .birthDate(tuple.get(QPlayer.player.birthDate))
+                        .solar(tuple.get(QPlayer.player.solar))
+                        .height(tuple.get(QPlayer.player.height))
+                        .weight(tuple.get(QPlayer.player.weight))
+                        .teamId(tuple.get(QPlayer.player.teamId))
+                        .build()).toList();
     }
-
-    @Override
-    public void update(Player player) {
-        em.persist(player);
-    }
-    
 }
 
 
