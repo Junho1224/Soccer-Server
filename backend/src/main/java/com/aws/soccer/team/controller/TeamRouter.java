@@ -16,7 +16,7 @@ public class TeamRouter {
 
     private final TeamRepository repository;
 
-    public List<Map<String, Object>> execute(String type) {
+    public List<?> execute(String type) {
 
         return switch (type){
             case "1"-> repository.getAllByTeamName();
