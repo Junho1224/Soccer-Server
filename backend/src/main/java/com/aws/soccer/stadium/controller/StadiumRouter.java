@@ -14,7 +14,7 @@ public class StadiumRouter {
     private final StadiumJpqlRepository repository;
 
     @SuppressWarnings("unckeked")
-    public List<Map<String, Object>> execute(String q) {
+    public List<?> execute(String q) {
 
         return switch (q) {
 
@@ -22,8 +22,7 @@ public class StadiumRouter {
             case "2" -> repository.getStadiumAndTeamAndSchedule();
             case "3" -> repository.getPohangSteelersGk();
             case "4" -> repository.getNoHomeTeam();
-
-//            case "4" -> repository.getHomeTeamWin();
+//          case "5" -> repository.getHomeTeamWin();
 
             default -> null;
         };

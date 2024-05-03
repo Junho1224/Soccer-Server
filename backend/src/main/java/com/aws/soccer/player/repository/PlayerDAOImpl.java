@@ -1,5 +1,8 @@
 package com.aws.soccer.player.repository;
 
+import com.aws.soccer.player.model.PlayerDTO;
+import com.aws.soccer.player.model.QPlayer;
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.stereotype.Repository;
 
 import com.aws.soccer.player.model.Player;
@@ -8,38 +11,17 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
 
-@Repository
+import java.util.List;
+
+
 @RequiredArgsConstructor
-@PersistenceContext
-public class PlayerDAOImpl implements PlayerDAO{
-    
-    
-    private final EntityManager em;
-    
-    @Override
-    public Player p1(Player player,Long id) {
-        return em.find(Player.class, 1L);
-    }
-    
-    @Override
-    public Player p2(Player player, Long id) {
-       em.createQuery("select a from Player a where a.id = :id",Player.class)
-       .setParameter("id", id)
-       .getResultList();
-    return em.find(Player.class, 1L);
-    }
+public class PlayerDAOImpl implements PlayerDAO {
+
+    private final JPAQueryFactory factory;
 
     @Override
-    public void insert(Player player) {
-        em.persist(player);
+    public List<PlayerDTO> getAllPlayers() {
+        return null;
     }
-
-    @Override
-    public void update(Player player) {
-        em.persist(player);
-    }
-    
 }
 
-
-// context
