@@ -11,9 +11,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @SpringBootApplication
 public class SoccerApplication {
 
-	public static void main(String... args) {
-		SpringApplication.run(SoccerApplication.class, args);
-	}
+    public static void main(String... args) {
+        SpringApplication.run(SoccerApplication.class, args);
+    }
+
 
 	@Bean
 	JPAQueryFactory jpaQueryFactory(EntityManager entityManager){

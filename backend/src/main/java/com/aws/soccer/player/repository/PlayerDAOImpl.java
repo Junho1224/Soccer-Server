@@ -4,16 +4,18 @@ import com.aws.soccer.player.model.PlayerDTO;
 import com.aws.soccer.player.model.QPlayer;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 @RequiredArgsConstructor
 public class PlayerDAOImpl implements PlayerDAO{
-    private final JPAQueryFactory jpaQueryFactory;
+    private final JPAQueryFactory factory;
 
     @Override
     public List<PlayerDTO> getAllPlayers() {
-        return jpaQueryFactory.select(
+        return factory.select(
                         QPlayer.player.id,
                         QPlayer.player.backNo,
                         QPlayer.player.playerName,

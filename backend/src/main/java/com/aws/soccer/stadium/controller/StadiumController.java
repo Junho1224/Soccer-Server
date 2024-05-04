@@ -20,13 +20,13 @@ public class StadiumController {
 
 
     @GetMapping("/search")
-    public ResponseEntity<List<Map<String,Object>>> getStadiumNameWithTeam(
+    public ResponseEntity<?> getStadiumNameWithTeam(
             @RequestParam(value = "q", required = true) String q,
             @RequestParam(value = "playerName", required = false) String playerName,
             @RequestParam(value = "position", required = false) String position,
             @RequestParam(value = "teamId", required = false) String teamId
     ){
-        List<Map<String, Object>> o = router.execute(q);
+        List<?> o = router.execute(q);
 
         return ResponseEntity.ok(o);
     }
