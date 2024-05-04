@@ -20,7 +20,7 @@ public class TeamController {
     private final TeamRouter router;
 
     @GetMapping(path = "/search")
-    public ResponseEntity<List<Map<String, Object>>> searchPlayer(
+    public ResponseEntity<?> searchPlayer(
             @RequestParam(value = "q", required = true) String q,
             @RequestParam(value = "playerName", required = false) String playerName,
             @RequestParam(value = "position", required = false) String position,
@@ -28,7 +28,7 @@ public class TeamController {
     ) {
         log.info("Controller searchPlayer q is {}", q);
 
-        List<Map<String, Object>> o = router.execute(q);
+        List<?> o = router.execute(q);
 
         return ResponseEntity.ok(o);
     }
