@@ -10,42 +10,42 @@ import java.util.Map;
 @Repository
 @SuppressWarnings("rawtypes")
 public interface PlayerJpqlRepository<Player>{
-    //Q2v
-    @Query("select distinct new map(p.POSITION as position) from player as p")
-    List<Map<String,Object>> getDistinctPosition();
-    //Q3
-    @Query("select distinct" +
-            " case" +
-            " when p.POSITION = '' then '신입' else p.POSITION" +
-            " end" +
-            " from player p")
-    List<Map<String,Object>> getDistinctByPositionIfnull();
-    //Q4v
-    @Query("select new map(p.playerName playerName) " +
-            " from player as p " +
-            " where p.teamId = :teamId and p.POSITION = :position")
-    List<Map<String,Object>> getPlayerNameFromRegion(@Param("teamId") String teamId, @Param("position") String position);
-
-    //Q5v
-    @Query("select new map (p.playerName as playerName) \n" +
-            " from player as p\n" +
-            " where p.teamId = :teamId and p.playerName like :playerName% and p.height >= :height \n")
-    List<Map<String,Object>> getPlayersByNameAndHeight(@Param("teamId")String teamId, @Param("playerName")String playerName, @Param("height")String height);
-    //
-//    //Q6v
-    @Query("select new map (p.playerName as playerName) " +
-            "from player p " +
-            "where p.POSITION= 'MF' " +
-            "and (p.height between '170' and '180') " +
-            "and p.teamId in (select t.teamId " +
-            "                from team as t " +
-            "                where t.team = '삼성블루윙즈' or t.team = '드래곤즈')")
-    List<Map<String,Object>> getPlayersByCondition(@Param("POSITION") String position, @Param("height")String height, @Param("team1")String team1, @Param("team2")String team2);
-    //
-//    //Q7v
-    @Query("select new map(p.playerName as playerName )from player p where p.POSITION = :position" +
-            " and p.teamId = (select t.teamId from team t where t.region = :region)")
-    List<Map<String,Object>> getPlayersByPositionAndRegion(@Param("position") String position, @Param("region")String region);
+//    //Q2v
+//    @Query("select distinct new map(p.POSITION as position) from player as p")
+//    List<Map<String,Object>> getDistinctPosition();
+//    //Q3
+//    @Query("select distinct" +
+//            " case" +
+//            " when p.POSITION = '' then '신입' else p.POSITION" +
+//            " end" +
+//            " from player p")
+//    List<Map<String,Object>> getDistinctByPositionIfnull();
+//    //Q4v
+//    @Query("select new map(p.playerName playerName) " +
+//            " from player as p " +
+//            " where p.teamId = :teamId and p.POSITION = :position")
+//    List<Map<String,Object>> getPlayerNameFromRegion(@Param("teamId") String teamId, @Param("position") String position);
+//
+//    //Q5v
+//    @Query("select new map (p.playerName as playerName) \n" +
+//            " from player as p\n" +
+//            " where p.teamId = :teamId and p.playerName like :playerName% and p.height >= :height \n")
+//    List<Map<String,Object>> getPlayersByNameAndHeight(@Param("teamId")String teamId, @Param("playerName")String playerName, @Param("height")String height);
+//    //
+////    //Q6v
+//    @Query("select new map (p.playerName as playerName) " +
+//            "from player p " +
+//            "where p.POSITION= 'MF' " +
+//            "and (p.height between '170' and '180') " +
+//            "and p.teamId in (select t.teamId " +
+//            "                from team as t " +
+//            "                where t.team = '삼성블루윙즈' or t.team = '드래곤즈')")
+//    List<Map<String,Object>> getPlayersByCondition(@Param("POSITION") String position, @Param("height")String height, @Param("team1")String team1, @Param("team2")String team2);
+//    //
+////    //Q7v
+//    @Query("select new map(p.playerName as playerName )from player p where p.POSITION = :position" +
+//            " and p.teamId = (select t.teamId from team t where t.region = :region)")
+//    List<Map<String,Object>> getPlayersByPositionAndRegion(@Param("position") String position, @Param("region")String region);
 
 //Q8x
 //    @Query("select p.playerName," +
