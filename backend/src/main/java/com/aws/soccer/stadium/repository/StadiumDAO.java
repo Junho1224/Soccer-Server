@@ -6,5 +6,6 @@ import com.aws.soccer.stadium.model.StadiumDTO;
 import java.util.List;
 
 public interface StadiumDAO {
-    List<StadiumDTO> getAllStadiums();
+    List<StadiumDTO> gainAllStadiums();
+
 }

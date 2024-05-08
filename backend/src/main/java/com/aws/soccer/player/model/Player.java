@@ -10,7 +10,7 @@ import lombok.*;
 @Builder
 @Getter
 @ToString(exclude = "id")
-public class Player {
+public class  Player {
     @Id
     @Column(name ="id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)

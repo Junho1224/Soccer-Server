@@ -2,41 +2,41 @@ package com.aws.soccer.stadium.repository;
 
 
 import com.aws.soccer.stadium.model.QStadium;
+import com.aws.soccer.stadium.model.QStadiumDTO;
 import com.aws.soccer.stadium.model.StadiumDTO;
+import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
+
 @RequiredArgsConstructor
 public class StadiumDAOImpl implements StadiumDAO {
 
     private final JPAQueryFactory factory;
+    private final QStadium stadium = QStadium.stadium;
 
     @Override
-    public List<StadiumDTO> getAllStadiums() {
+    public List<StadiumDTO> gainAllStadiums() {
+
         return factory.select(
-                        QStadium.stadium.id,
-                        QStadium.stadium.stadiumId,
-                        QStadium.stadium.stadiumName,
-                        QStadium.stadium.hometeamId,
-                        QStadium.stadium.seatCount,
-                        QStadium.stadium.address,
-                        QStadium.stadium.ddd,
-                        QStadium.stadium.tel)
+                new QStadiumDTO(
+                        stadium.id,
+                        stadium.stadiumId,
+                        stadium.stadiumName,
+                        stadium.hometeamId,
+                        stadium.seatCount,
+                        stadium.address,
+                        stadium.ddd,
+                        stadium.tel))
                 .from(QStadium.stadium)
-                .fetch()
-                .stream()
-                .map(tuple -> StadiumDTO.builder()
-                        .id(tuple.get(QStadium.stadium.id))
-                        .stadiumId(tuple.get(QStadium.stadium.stadiumId))
-                        .stadiumName(tuple.get(QStadium.stadium.stadiumName))
-                        .hometeamId(tuple.get(QStadium.stadium.hometeamId))
-                        .seatCount(tuple.get(QStadium.stadium.seatCount))
-                        .address(tuple.get(QStadium.stadium.address))
-                        .ddd(tuple.get(QStadium.stadium.ddd))
-                        .tel(tuple.get(QStadium.stadium.tel))
-                        .build()).toList();
+                .orderBy(stadium.stadiumName.asc())
+                .offset(1)
+                .limit(5)
+                .fetch();
+
+
     }
 }
 

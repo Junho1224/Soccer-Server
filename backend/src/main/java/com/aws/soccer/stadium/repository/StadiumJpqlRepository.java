@@ -13,7 +13,7 @@ public interface StadiumJpqlRepository extends JpaRepository<Stadium, Long> {
     @Query("select distinct new map(s.stadiumName as 홈구장, concat(t.region, '[ ]',t.team) as 팀명) " +
             "from stadium s join team t on s.stadiumId = t.stadiumId " +
             "where t.region = '수원' and s.stadiumName like '수원%'")
-    List<Map<String, Object>> getStadiumNameWithTeam();
+    List<?> getStadiumNameWithTeam();
 
     @Query("select distinct new map(t.team as 팀이름, s.stadiumName as 스타디움, " +
             "(select distinct t2.team from team t2 where sc.awayteamId = t2.teamId) as 어웨이팀) " +
@@ -21,7 +21,7 @@ public interface StadiumJpqlRepository extends JpaRepository<Stadium, Long> {
             "join team t on s.stadiumId = t.stadiumId " +
             "join schedule sc on s.stadiumId = sc.stadiumId " +
             "where sc.scheDate = '20120317'")
-    List<Map<String, Object>> getStadiumAndTeamAndSchedule();
+    List<?>getStadiumAndTeamAndSchedule();
 
 
     @Query("SELECT distinct new map(p.playerName as 이름, p.POSITION as 포지션, concat(t.team, ' ', t.region) as 팀명, " +
@@ -31,7 +31,7 @@ public interface StadiumJpqlRepository extends JpaRepository<Stadium, Long> {
             "JOIN team t ON s.stadiumId = t.stadiumId " +
             "JOIN player p ON t.teamId = p.teamId " +
             "WHERE p.POSITION = 'GK' AND t.team = '스틸러스' AND sc.scheDate = '20120317'")
-    List<Map<String, Object>> getPohangSteelersGk();
+    List<?>getPohangSteelersGk();
 
 
 //    @Query("SELECT new map(s.stadiumName as 스타디움, sc.scheDate as 경기일정, home.team as 홈팀명, away.team as 어웨이팀명) " +
@@ -46,5 +46,5 @@ public interface StadiumJpqlRepository extends JpaRepository<Stadium, Long> {
             "(SELECT distinct t2.team FROM team t2 WHERE t2.stadiumId = s.stadiumId) as 팀명) " +
             "FROM stadium s " +
             "left join team t on s.stadiumId = t.stadiumId")
-    List<Map<String, Object>> getNoHomeTeam();
+    List<?>getNoHomeTeam();
 }
